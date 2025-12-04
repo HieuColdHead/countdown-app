@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Đếm Ngược Thời Gian</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-clock"></i> Bộ Đếm Ngược Thời Gian</h1>
+            <p class="subtitle">Đếm ngược đến bất kỳ thời điểm nào trong tương lai</p>
+        </header>
+
+        <main class="main-content">
+            <div class="setup-section">
+                <h2><i class="fas fa-cog"></i> Thiết lập thời gian đếm ngược</h2>
+                
+                <div class="datetime-inputs">
+                    <div class="input-group">
+                        <label for="target-date"><i class="far fa-calendar-alt"></i> Ngày đích:</label>
+                        <input type="date" id="target-date" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="target-time"><i class="far fa-clock"></i> Giờ đích:</label>
+                        <input type="time" id="target-time" required>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="countdown-title"><i class="fas fa-heading"></i> Tiêu đề đếm ngược:</label>
+                    <input type="text" id="countdown-title" placeholder="Ví dụ: Đếm ngược đến sinh nhật" value="Đếm ngược đến sự kiện">
+                </div>
+                
+                <div class="buttons">
+                    <button id="start-btn" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Bắt đầu đếm ngược
+                    </button>
+                    <button id="reset-btn" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Đặt lại
+                    </button>
+                </div>
+            </div>
+
+            <div class="countdown-section">
+                <h2 id="current-countdown-title">Đếm ngược đến sự kiện</h2>
+                
+                <div class="countdown-display">
+                    <div class="time-unit">
+                        <div class="number" id="days">00</div>
+                        <div class="label">Ngày</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="time-unit">
+                        <div class="number" id="hours">00</div>
+                        <div class="label">Giờ</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="time-unit">
+                        <div class="number" id="minutes">00</div>
+                        <div class="label">Phút</div>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="time-unit">
+                        <div class="number" id="seconds">00</div>
+                        <div class="label">Giây</div>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                
+                <div class="target-info">
+                    <p><i class="fas fa-bullseye"></i> Thời gian đích: <span id="target-datetime-display">--/--/---- --:--:--</span></p>
+                    <p><i class="fas fa-history"></i> Thời gian còn lại: <span id="time-remaining">--</span></p>
+                </div>
+            </div>
+
+            <div class="share-section">
+                <h3><i class="fas fa-share-alt"></i> Chia sẻ bộ đếm ngược</h3>
+                <div class="share-buttons">
+                    <button id="copy-link" class="btn btn-share">
+                        <i class="fas fa-link"></i> Sao chép liên kết
+                    </button>
+                    <button id="save-local" class="btn btn-share">
+                        <i class="fas fa-save"></i> Lưu cục bộ
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Ứng dụng Đếm Ngược Thời Gian | Có thể deploy lên Vercel, Netlify, GitHub Pages</p>
+            <p class="hint">Hãy nhập ngày và giờ trong tương lai để bắt đầu đếm ngược!</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
